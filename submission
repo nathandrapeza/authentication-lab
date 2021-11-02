@@ -1,8 +1,8 @@
 1. Django rest framework uses Basic Authentication (username and password) by default (seen in the fact that, unless you specify which authentication to use, you have to log in using username:password to POST a new Snippet). This can be managed by using the DEFAULT_AUTHENTICATION_CLASSES setting and inputting the desired authentication schemes into the JSON value (key being "DEFAULT_AUTHENTICATION_CLASSES").
 
-2. HTTPie uses basic authentication by deafult.
+2. HTTPie uses basic authentication by default.
 
-3. Session authentication is managed by the server. Server decides how long the session is. Token authentication - the token is kept on the user's side. User is responsibile for keeping token safe.
+3. Session authentication is managed by the server. Server decides how long the session is. Token authentication - the token is kept on the user's side. User is responsible for keeping token safe.
 
 4. Summary (my interpretation from https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2, in order):
 	- Client asks for a piece of proof that Authorization Server would accept as valid -- like a reference letter that speaks well of the client.
@@ -12,10 +12,11 @@
 	- Protected resources are given to the client
 
 	Given the bitbucket.org > log in > log in with Google example, here's what I think is happening:
+		Background: Client wants to access resources from resource owner, Bitbucket, but needs authentication.
 		- Client asks google for Authorization Grant
-		- Authorzation grant given to Client
-		- Authorization grant from Google presenteed to Bitbucket's service API
+		- Authorization grant given to Client
+		- Authorization grant from Google presented to Bitbucket's service API
 		- Bitbucket's service API hands Client an access token
-		- Client uses token to access protectede resource
+		- Client uses token to access protected resource
 
 6. https://github.com/nathandrapeza/authentication-lab
